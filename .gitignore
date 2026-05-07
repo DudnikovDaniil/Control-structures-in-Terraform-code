@@ -1,0 +1,33 @@
+# Terraform state files (могут содержать пароли)
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Secret files (КЛЮЧИ И ТОКЕНЫ!)
+*.json
+*.tfvars
+personal.auto.tfvars
+.terraformrc
+
+# Local .terraform directories
+**/.terraform/*
+.terraform*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Override files
+*.override.tf
+*.override.tf.json
+
+# Ansible inventory (может содержать IP)
+inventory.ini
+for.ini
+hosts.yaml
+hosts.ini
+
+# Backup files
+*.backup
+*.bak
