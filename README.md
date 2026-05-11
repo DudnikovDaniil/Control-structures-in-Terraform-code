@@ -173,7 +173,7 @@ terraform destroy -auto-approve
 
 ![image_id через data](screenshots/screenshot-check-image-id.png)
 
-### Исправление 3: Удаление хардкода (цифр)
+### Исправление 3: Удаление хардкода
 
 Проверка отсутствия жёстко заданных значений `cores`, `memory`, `size` в ресурсах:
 
