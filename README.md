@@ -151,3 +151,58 @@ terraform destroy -auto-approve
 ```
 
 ---
+
+---
+
+##  Доработка по замечаниям эксперта
+
+### Исправление 1: Образ через data-блок
+
+В `main.tf` добавлен блок `data "yandex_compute_image" "ubuntu"`:
+
+![data блок](screenshots/screenshot-check-data.png)
+
+### Исправление 2: Использование image_id через data во всех ВМ
+
+Во всех ресурсах ВМ (`count-vm.tf`, `for_each-vm.tf`, `disk_vm.tf`) хардкодный ID образа заменён на `data.yandex_compute_image.ubuntu.image_id`:
+
+![image_id через data](screenshots/screenshot-check-image-id.png)
+
+### Исправление 3: Удаление хардкода (цифр)
+
+Проверка отсутствия жёстко заданных значений `cores`, `memory`, `size` в ресурсах:
+
+![хардкод проверка 1](screenshots/screenshot-check-hardcode01.png)
+![хардкод проверка 2](screenshots/screenshot-check-hardcode02.png)
+
+### Исправление 4: Проверка синтаксиса
+
+```bash
+terraform validate
+```
+
+Результат: `Success! The configuration is valid.`
+
+![terraform validate](screenshots/screenshot-validate.png)
+
+### Исправление 5: Форматирование кода
+
+```bash
+terraform fmt -check -recursive
+```
+
+Результат: пустой вывод (всё отформатировано)
+
+![terraform fmt](screenshots/screenshot-fmt.png)
+
+---
+
+##  Ссылки на исправленный код
+
+- [main.tf (data-блок)](main.tf)
+- [count-vm.tf](count-vm.tf)
+- [for_each-vm.tf](for_each-vm.tf)
+- [disk_vm.tf](disk_vm.tf)
+- [variables.tf](variables.tf)
+
+---
