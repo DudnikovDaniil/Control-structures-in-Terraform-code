@@ -1,4 +1,4 @@
-# Домашнее задание "Управляющие конструкции в коде Terraform"
+\# Домашнее задание "Управляющие конструкции в коде Terraform"
 
 **Выполнил:** Дудников Даниил
 
@@ -50,17 +50,24 @@
 [variables.tf](variables.tf) — переменные
 
 ---
-
 ## Задание 3. Диски и Dynamic block
 
-Созданы 3 дополнительных диска по 1 ГБ через `count`.
+Созданы 3 дополнительных диска по 1 ГБ через `count`. 
 ВМ `storage` подключает эти диски через `dynamic secondary_disk` с `for_each`.
 
-![Список ВМ](screenshots/screenshot-02-vm-list.png) (storage видна в списке)
+**Код:**  [disk_vm.tf](disk_vm.tf)
+
+**Скриншот** (storage видна в списке ВМ):
+![Список ВМ](screenshots/screenshot-02-vm-list.png)
+
+###  Проверка отсутствия хардкода в задании 3
+
+Проверяем, что в `disk_vm.tf` нет жёстко заданных значений `cores`, `memory`, `size`.
+
+![хардкод проверка 1](screenshots/screenshot-check-hardcode01.png)
+![хардкод проверка 2](screenshots/screenshot-check-hardcode02.png)
 
 [disk_vm.tf](disk_vm.tf) — диски и storage
-
----
 
 ## Задание 4. Ansible инвентарь
 
