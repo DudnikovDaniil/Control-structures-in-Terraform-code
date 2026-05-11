@@ -43,3 +43,34 @@ variable "test_vpc" {
     subnet_zones = ["ru-central1-a", "ru-central1-b", "ru-central1-c", "ru-central1-d"]
   }
 }
+
+variable "default_cidr" {
+  type        = list(string)
+  default     = ["10.0.1.0/24"]
+  description = "CIDR подсети"
+}
+
+variable "disk_type" {
+  type    = string
+  default = "network-hdd"
+}
+
+variable "disk_size" {
+  type    = number
+  default = 1
+}
+
+variable "storage_cores" {
+  type    = number
+  default = 2
+}
+
+variable "storage_memory" {
+  type    = number
+  default = 1
+}
+
+variable "storage_core_fraction" {
+  type    = number
+  default = 20
+}
