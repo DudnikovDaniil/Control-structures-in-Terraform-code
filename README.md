@@ -67,8 +67,6 @@
 ![хардкод проверка 1](screenshots/screenshot-check-hardcode01.png)
 ![хардкод проверка 2](screenshots/screenshot-check-hardcode02.png)
 
-[disk_vm.tf](disk_vm.tf) — диски и storage
-
 ## Задание 4. Ansible инвентарь
 
 Создан файл `inventory.ini` с помощью `templatefile`. 
